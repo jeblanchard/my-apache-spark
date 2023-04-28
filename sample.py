@@ -1,7 +1,9 @@
-from pyspark import SparkContext as sc
+from pyspark import SparkContext
 import re
 
 user_agent_pattern = re.compile(r"\'User-Agent\',\s(\w*)", re.IGNORECASE)
+
+print("loaded the file correctly")
 
 
 def find_user_agent(filename_content_tuple):
@@ -16,7 +18,16 @@ def find_user_agent(filename_content_tuple):
     return user_agent
 
 
-textFiles = sc.wholeTextFiles("./data/")
+sc = SparkContext("local", "test")
+textFiles = sc.wholeTextFiles(path="./data/")
+
 allUserAgents = textFiles.map(find_user_agent)
+print("Got to all user agents")
+
 distinctUserAgents = allUserAgents.distinct()
+print("Got to distinct user agents")
+print(distinctUserAgents)
+
 distinctUserAgents.collect()
+
+print(distinctUserAgents)
