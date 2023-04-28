@@ -19,7 +19,7 @@ def find_user_agent(filename_content_tuple):
 
 
 sc = SparkContext("local", "test")
-textFiles = sc.wholeTextFiles(path="./data/")
+textFiles = sc.wholeTextFiles(path="test/data/")
 
 allUserAgents = textFiles.map(find_user_agent)
 print("Got to all user agents")
