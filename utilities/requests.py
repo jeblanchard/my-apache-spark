@@ -1,6 +1,6 @@
 import re
 
-user_agent_pattern = re.compile(r"\'User-Agent\',\s(\w*)", re.IGNORECASE)
+user_agent_pattern = re.compile(r"'User-Agent',\s*'(\S*)'", re.IGNORECASE)
 
 
 def find_user_agent(filename_content_tuple):
