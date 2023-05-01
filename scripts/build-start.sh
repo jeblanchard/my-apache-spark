@@ -1,3 +1,3 @@
 docker build -t jeblanchard/personal-website:my-apache-spark .
 
-docker run -it jeblanchard/personal-website:my-apache-spark sh
+docker run --name my-apache-spark -it jeblanchard/personal-website:my-apache-spark sh
