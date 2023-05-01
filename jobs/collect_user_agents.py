@@ -1,9 +1,20 @@
 from pyspark import SparkContext
+
+import sys
+
+sys.path.append("./")
 from utilities.requests import find_user_agent
+
+file_path = ""
+if __name__ == "__main__":
+    try:
+        file_path = sys.argv[1]
+    except IndexError:
+        raise Exception("Please provide the input file(s) location.")
 
 sc = SparkContext("local", "test")
 
-textFiles = sc.wholeTextFiles(path="./work-dir/")
+textFiles = sc.wholeTextFiles(path=file_path)
 
 all_user_agents_rdd = textFiles.map(find_user_agent)
 

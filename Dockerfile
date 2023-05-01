@@ -1,5 +1,7 @@
 FROM apache/spark-py:latest
 
-COPY jobs/collect_user_agents.py ./sample.py
+ADD ./jobs/ ./jobs/
 
-COPY test/data/site-visits/ ./
+ADD ./utilities ./utilities
+
+ADD ./test/data/site-visits/ ./test/data/site-visits/
