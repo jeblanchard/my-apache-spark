@@ -16,3 +16,8 @@ docker cp my-apache-spark:$outputFilenameForCp $outputFilename
 validatorFilename="./test/src/check_user_agent_csv.py"
 
 py $validatorFilename $outputFilename
+
+# Remove output files.
+
+rm $outputFilename
+docker exec my-apache-spark rm $outputFilename
