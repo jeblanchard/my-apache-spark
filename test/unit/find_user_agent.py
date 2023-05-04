@@ -4,7 +4,7 @@ sys.path.append('C:\\Users\\blanc\\personal-projects\\my-apache-spark')
 from utilities.requests import find_user_agent
 
 correct_user_agent = "GoogleHC/1.0"
-request_file_path = "./test/data/site-visits/site-visit-1682453805068-84.txt"
+request_file_path = "./test/data/in/site-visits/site-visit-1682453805068-84.txt"
 
 textFile = open(request_file_path, mode='rt', newline='\n')
 text = textFile.read()
