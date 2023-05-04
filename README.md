@@ -1,3 +1,6 @@
 The home for all my Apache Spark jobs.
 
-Refer to the `scripts` folder for project operations. 
+This project provides an environment to test Spark jobs - as well as 
+their dependencies - before deploying them in a live / production environment.
+
+Refer to the `scripts` folder for project operations.

@@ -1,1 +1,1 @@
-The home for all raw-data used for testing purposes.
+The home for all data used for testing.
